@@ -660,36 +660,37 @@ diff_yield <- round(annual_energy_cost_solar_hp(
 diff_pct_solar_used <- round(annual_energy_cost_solar_hp(pct_solar_used=pct_solar_used_worst, ) - 
   annual_energy_cost_solar_hp(pct_solar_used=pct_solar_used_best),-1)
 
-cost_factors <- data.frame(
+cost_factors <- tibble(
   factor=c("export rate (£/kWh)","SCOP","annual yield (kWh)","solar energy used locally (%)"), 
   best=c(price_elec_export_best, SCOP_MAX, 
          ANNUAL_YIELD+2*ANNUAL_YIELD_STD, pct_solar_used_best),
   worst=c(price_elec_export_worst, SCOP_MIN, 
          ANNUAL_YIELD-2*ANNUAL_YIELD_STD, pct_solar_used_worst),
-  "annual_cost_difference"=c(diff_export_rate, diff_scop, diff_yield, diff_pct_solar_used )
+  "annual cost difference"=paste("£", c(diff_export_rate, diff_scop, diff_yield, diff_pct_solar_used ), sep="")
 )
 
 kable(cost_factors, caption = "Factors affecting energy costs with solar panels and a heat pump installed, likely ranges and possible impact on net annual costs (£)")
 ```
 
-| factor                        |    best |   worst | annual_cost_difference |
-|:------------------------------|--------:|--------:|-----------------------:|
-| export rate (£/kWh)           |    0.15 |    0.03 |                    270 |
-| SCOP                          |    3.70 |    2.90 |                    200 |
-| annual yield (kWh)            | 3657.00 | 3189.00 |                    100 |
-| solar energy used locally (%) |    0.42 |    0.28 |                     80 |
+| factor                        |    best |   worst | annual cost difference |
+|:------------------------------|--------:|--------:|:-----------------------|
+| export rate (£/kWh)           |    0.15 |    0.03 | £270                   |
+| SCOP                          |    3.70 |    2.90 | £200                   |
+| annual yield (kWh)            | 3657.00 | 3189.00 | £100                   |
+| solar energy used locally (%) |    0.42 |    0.28 | £80                    |
 
 Factors affecting energy costs with solar panels and a heat pump
 installed, likely ranges and possible impact on net annual costs (£)
 
-The most significant factor affecting ROI was found to be the electric
-export rate which can vary by provider between about 3p to 15p per kWh.
-([SEG
-rates](https://www.theecoexperts.co.uk/solar-panels/smart-export-guarantee#link-smart-export-guarantee-rates)
-) Switching SEG provider could result in £270 savings. Future variations
-in electric import rates will naturally also have a strong effect though
-they are currently capped. A heat pump will become more favourable if
-electricity prices are reduced relative to gas and vice versa.
+The most significant factor affecting return on investment was found to
+be the electric export rate which can vary by provider between about 3p
+to 15p per kWh. Switching [SEG
+provider](https://www.theecoexperts.co.uk/solar-panels/smart-export-guarantee#link-smart-export-guarantee-rates)
+could result in £270 difference in annual energy costs. Future
+variations in electric import rates will naturally also have a strong
+effect though they are currently capped. A heat pump will become more
+favourable if electricity prices are reduced relative to gas and vice
+versa.
 
 Heat pump efficiency also has a strong impact on annual running costs. A
 SCOP of 3.7 will yield £200 more savings compared to one of 2.9. This

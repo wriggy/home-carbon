@@ -87,24 +87,24 @@ will be more favourable.
 
 # Factors affecting net annual energy costs
 
-| factor                        |    best |   worst | annual_cost_difference |
-|:------------------------------|--------:|--------:|-----------------------:|
-| export rate (£/KWh)           |    0.15 |    0.03 |                    270 |
-| SCOP                          |    3.70 |    2.90 |                    200 |
-| annual yield (KWh)            | 3657.00 | 3189.00 |                    100 |
-| solar energy used locally (%) |    0.42 |    0.28 |                     80 |
+| factor                        |    best |   worst | annual cost difference |
+|:------------------------------|--------:|--------:|:-----------------------|
+| export rate (£/kWh)           |    0.15 |    0.03 | £270                   |
+| SCOP                          |    3.70 |    2.90 | £200                   |
+| annual yield (kWh)            | 3657.00 | 3189.00 | £100                   |
+| solar energy used locally (%) |    0.42 |    0.28 | £80                    |
 
 Factors affecting energy costs with solar panels and a heat pump
 installed, likely ranges and possible impact on net annual costs (£)
 
-The most significant factor affecting ROI was found to be the electric
-export rate which can vary by provider between about 3p to 15p per KWh.
-Switching [SEG
+The most significant factor affecting return on investment was found to
+be the electric export rate which can vary by provider between about 3p
+to 15p per KWh. Switching [SEG
 provider](https://www.theecoexperts.co.uk/solar-panels/smart-export-guarantee#link-smart-export-guarantee-rates)
-could result in £270 savings. Future variations in electric import rates
-will naturally also have a strong effect though they are currently
-capped. A heat pump will become more favourable if electricity prices
-are reduced relative to gas and vice versa.
+could result in £270 difference in annual costs. Future variations in
+electric import rates will naturally also have a strong effect though
+they are currently capped. A heat pump will become more favourable if
+electricity prices are reduced relative to gas and vice versa.
 
 Heat pump efficiency has a strong impact on annual running costs. A SCOP
 of 3.7 will yield £200 more savings compared to one of 2.9. This can be
@@ -118,7 +118,7 @@ heat pump is not really the issue.
 # Conclusions
 
 - A heat pump and solar panels will slash our carbon emissions from
-  domestic energy usage by nearly 2 tonnes. It”s a huge step on our
+  domestic energy usage by nearly 2 tonnes. It’s a huge step on our
   route to carbon zero.
 - Our existing solar panels with current patterns of usage will pay for
   themselves in about 9 years.

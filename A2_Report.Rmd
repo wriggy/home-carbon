@@ -1,11 +1,11 @@
 ---
 title: "The Road to Carbon Zero - Starting at Home"
 output:
-  github_document: 
+  html_document:
     toc: yes
     toc_depth: 2
     number_sections: yes
-  html_document:
+  github_document: 
     toc: yes
     toc_depth: 2
     number_sections: yes
@@ -569,19 +569,19 @@ diff_yield <- round(annual_energy_cost_solar_hp(
 diff_pct_solar_used <- round(annual_energy_cost_solar_hp(pct_solar_used=pct_solar_used_worst, ) - 
   annual_energy_cost_solar_hp(pct_solar_used=pct_solar_used_best),-1)
 
-cost_factors <- data.frame(
+cost_factors <- tibble(
   factor=c("export rate (£/kWh)","SCOP","annual yield (kWh)","solar energy used locally (%)"), 
   best=c(price_elec_export_best, SCOP_MAX, 
          ANNUAL_YIELD+2*ANNUAL_YIELD_STD, pct_solar_used_best),
   worst=c(price_elec_export_worst, SCOP_MIN, 
          ANNUAL_YIELD-2*ANNUAL_YIELD_STD, pct_solar_used_worst),
-  "annual_cost_difference"=c(diff_export_rate, diff_scop, diff_yield, diff_pct_solar_used )
+  "annual cost difference"=paste("£", c(diff_export_rate, diff_scop, diff_yield, diff_pct_solar_used ), sep="")
 )
 
 kable(cost_factors, caption = "Factors affecting energy costs with solar panels and a heat pump installed, likely ranges and possible impact on net annual costs (£)")
 ```
 
-The most significant factor affecting ROI was found to be the electric export rate which can vary by provider between about `r price_elec_export_worst*100`p to `r price_elec_export_best*100`p per kWh. ([SEG rates](https://www.theecoexperts.co.uk/solar-panels/smart-export-guarantee#link-smart-export-guarantee-rates) )  Switching SEG provider could result in £`r diff_export_rate` savings. 
+The most significant factor affecting return on investment was found to be the electric export rate which can vary by provider between about `r price_elec_export_worst*100`p to `r price_elec_export_best*100`p per kWh. Switching [SEG provider](https://www.theecoexperts.co.uk/solar-panels/smart-export-guarantee#link-smart-export-guarantee-rates) could result in £`r diff_export_rate` difference in annual energy costs. 
 Future variations in electric import rates will naturally also have a strong effect though they are currently capped. A heat pump will become more favourable if electricity prices are reduced relative to gas and vice versa. 
 
 Heat pump efficiency also has a strong impact on annual running costs. A SCOP of 3.7 will yield £`r diff_scop` more savings compared to one of 2.9. This can be controlled to some extent by heat pump settings - eg running at a lower temperature.
